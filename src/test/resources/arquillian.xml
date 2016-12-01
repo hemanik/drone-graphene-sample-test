@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<arquillian xmlns="http://jboss.com/arquillian" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+    <extension qualifier="webdriver">
+        <property name="browser">${browser}</property>
+    </extension>
+    <container qualifier="chameleon" default="true">
+        <configuration>
+            <property name="chameleonTarget">wildfly:9.0.0.CR1:managed</property>
+         <!--   <property name="serverConfig">standalone-full.xml</property>
+-->        </configuration>
+    </container>
+
+    <extension qualifier="reporter">
+        <property name="report">html</property> <property/>
+    </extension>
+
+    <extension qualifier="recorder">
+        <property name="startBeforeClass">true</property>
+        <!--<property name="takeOnlyOnFail">false</property>-->
+    </extension>
+</arquillian>
